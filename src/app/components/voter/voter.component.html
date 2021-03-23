@@ -1,1 +1,40 @@
-<p>voter works!</p>
+<h1 class="mb-4">Voter</h1>
+
+<app-error ></app-error>
+
+<form >
+  <div class="form-group">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="CIN"
+      formControlName="cin"
+    />
+  </div>
+  <div class="form-group">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Nom"
+      formControlName="nom"
+    />
+  </div>
+  <div class="form-group">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Prenom"
+      formControlName="prenom"
+    />
+  </div>
+  <div class="form-group">
+    <select class="form-control" formControlName="partieNom">
+      <option  value="nom">
+       nom
+      </option>
+    </select>
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="false">
+    Voter
+  </button>
+</form>
