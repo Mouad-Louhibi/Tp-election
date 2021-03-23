@@ -15,7 +15,7 @@ export class AddPartieComponent implements OnInit {
   public form:FormGroup;
 
   ngOnInit(): void {
-    this.form=new FormGroup({
+    this.form = new FormGroup({
       nom:new FormControl('', [Validators.required, Validators.minLength(3)]),
       description:new FormControl()
     })

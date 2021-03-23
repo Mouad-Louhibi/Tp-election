@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import {Citoyen} from '../models/Citoyen'
-import {Partie} from '../models/Partie'
+import { Citoyen } from '../models/Citoyen';
+import { Partie } from '../models/Partie';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -9,6 +10,7 @@ export class AppService {
   constructor() { 
     this.parties=new Array<Partie>();
   }
+
   // parties 
   public ajouterPartie(partie:Partie):boolean{
     for(let i=0;i<this.parties.length;i++)
@@ -18,21 +20,25 @@ export class AppService {
     this.parties.push(partie);
     return true;
   }
+
   public supprimerPartie(nomPartie:String):boolean{
     for(let i=0;i<this.parties.length;i++)
-        if(this.parties[i].nom==nomPartie)
-        {
-          this.parties.splice(i,1);
-          return true;
-        }
+      if(this.parties[i].nom==nomPartie)
+      {
+        this.parties.splice(i,1);
+        return true;
+      }
       
     return false;
   }
+
   public getParties():Array<Partie>{
     return this.parties;
   }
+
   // Citoyen
-  public voter(citoyen:Citoyen,nomPartie:String):boolean{//POJO
+  public voter(citoyen:Citoyen,nomPartie:String):boolean{
+    //POJO
     for(let i=0;i<this.parties.length;i++)
       {
         for(let j=0;j<this.parties[i].votes.length;j++)
@@ -41,6 +47,7 @@ export class AppService {
             return false;
         }
       }
+
     for(let i=0;i<this.parties.length;i++)
       if(this.parties[i].nom==nomPartie)
       { 
