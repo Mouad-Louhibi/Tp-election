@@ -1,8 +1,6 @@
 <h1 class="mb-4">Voter</h1>
 
-<app-error ></app-error>
-
-<form >
+<form [formGroup]="form">
   <div class="form-group">
     <input
       type="text"
@@ -34,7 +32,7 @@
       </option>
     </select>
   </div>
-  <button type="submit" class="btn btn-primary" [disabled]="false">
+  <button type="submit" class="btn btn-primary" [disabled]="!form.valid">
     Voter
   </button>
 </form>

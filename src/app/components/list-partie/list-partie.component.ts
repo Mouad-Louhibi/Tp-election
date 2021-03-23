@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Partie } from 'src/app/models/Partie';
+import { AppService } from 'src/app/services/app.service';
 
 @Component({
   selector: 'app-list-partie',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListPartieComponent implements OnInit {
 
-  constructor() { }
+  public parties:Array<Partie>;
+
+  constructor(private service:AppService) { }
 
   ngOnInit(): void {
+    this.parties = this.service.getParties();
+  }
+
+  public onClick(nom:String):void{
+    this.service.supprimerPartie(nom);
   }
 
 }

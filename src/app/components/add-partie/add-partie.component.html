@@ -1,6 +1,4 @@
-<app-error ></app-error>
-
-<form >
+<form [formGroup]="form" (ngSubmit)="onSubmit()">  
   <div class="form-group">
     <input
       type="text"
@@ -17,7 +15,7 @@
       formControlName="description"
     />
   </div>
-  <button type="submit" class="btn btn-primary" [disabled]="false">
+  <button type="submit" class="btn btn-primary" [disabled]="!form.valid">
     Ajouter partie
   </button>
 </form>

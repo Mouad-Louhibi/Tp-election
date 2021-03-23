@@ -12,6 +12,7 @@ import { ResultatComponent } from './components/resultat/resultat.component';
 import { AddPartieComponent } from './components/add-partie/add-partie.component';
 import { ListPartieComponent } from './components/list-partie/list-partie.component';
 import { ErrorComponent } from './components/error/error.component'
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,8 @@ import { ErrorComponent } from './components/error/error.component'
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [AppService],
   bootstrap: [AppComponent]
