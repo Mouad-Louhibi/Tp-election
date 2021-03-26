@@ -1,6 +1,6 @@
 <h1 class="mb-4">Voter</h1>
 
-<form [formGroup]="form">
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
   <div class="form-group">
     <input
       type="text"
@@ -26,9 +26,10 @@
     />
   </div>
   <div class="form-group">
-    <select class="form-control" formControlName="partieNom">
-      <option  value="nom">
-       nom
+    <select class="form-control"
+    formControlName="partieNom">
+      <option  value="nom" *ngFor="let partie of parties">
+        {{partie.nom}}
       </option>
     </select>
   </div>

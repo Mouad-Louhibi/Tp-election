@@ -1,15 +1,15 @@
 <h1 class="mb-4">Resultats</h1>
 
-<div class="card text-center mb-4 mt-4">
+<div class="card text-center mb-4 mt-4" *ngFor="let partie of parties">
     <div class="card-header">
         <span class="badge badge-warning">Winner</span>
-        nbr Votes
+        {{partie.votes.length}}
     </div>
     <div class="card-body">
-        <h5 class="card-title">nom </h5>
-        <p class="card-text">description</p>
+        <h5 class="card-title">{{partie.nom}}</h5>
+        <p class="card-text">{{partie.description}}</p>
     </div>
     <div class="card-footer text-muted">
-        date creation
+        date creation     
     </div>
 </div>
