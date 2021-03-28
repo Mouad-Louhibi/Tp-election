@@ -26,9 +26,16 @@ export class ResultatComponent implements OnInit {
     let max:number;
     let i:number;
     let index:number;
+    let flag:boolean;
     
     max = this.parties[0].votes.length;
     index = 0;
+    flag = false;
+
+    for (let partie of this.parties) {
+      if(partie.votes.length != 0)
+        flag = true;
+    }
 
     for(i = 0; i < this.parties.length; i++){
       if(this.parties[i].votes.length > max){
@@ -37,6 +44,9 @@ export class ResultatComponent implements OnInit {
       }
     }
 
-    this.parties[index].win = true;
+    this.service.resetWin();
+
+    if(flag == true)
+      this.parties[index].win = true;
   }
 }

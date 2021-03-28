@@ -10,14 +10,10 @@ export class Partie{
 
     public constructor(nom="",description="",dateCreation="")
     {
-        //Date:String = new Date();
         this.votes=new Array<Citoyen>();
         this.nom=nom;
         this.description=description;
-        this.dateCreation= dateCreation;
+        this.dateCreation=new Date().toString();
         this.win = false;
     }
-
-    
-
 }

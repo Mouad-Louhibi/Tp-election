@@ -36,6 +36,12 @@ export class AppService {
     return this.parties;
   }
 
+  public resetWin():void{
+    for(let partie of this.parties){
+      partie.win = false;
+    }
+  }
+
   // Citoyen
   public voter(citoyen:Citoyen,nomPartie:String):boolean{
     //POJO

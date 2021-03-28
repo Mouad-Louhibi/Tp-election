@@ -34,32 +34,7 @@ export class VoterComponent implements OnInit {
     this.citoyen = new Citoyen(this.form.controls['cin'].value,
                                this.form.controls['nom'].value, 
                                this.form.controls['prenom'].value);
-    this.service.voter(this.citoyen, this.form.controls['partieNom'].value)  
-    this.form.reset()
+    this.service.voter(this.citoyen, this.form.controls['partieNom'].value);
+    this.form.reset();
   }
-}
-
-class DropdownMenu {
-  dropdownMenu: HTMLSelectElement;
-  options: HTMLOptionsCollection;
-
-  constructor(dropdown: HTMLSelectElement) {
-      this.dropdownMenu = dropdown;
-      this.options = dropdown.options;
-      }
-
-  OnChange() {
-      alert(this.options[this.options.selectedIndex].value);
-      document.location.href = this.options[this.options.selectedIndex].value;
-  } 
-
-}
-
-
-window.onload = () => {
-  let select1: HTMLSelectElement = <HTMLSelectElement>document.getElementById("Select1");
-  let ddm1: DropdownMenu = new DropdownMenu(select1);
-  select1.onchange = () => {
-      ddm1.OnChange(); 
-  }  
 }
