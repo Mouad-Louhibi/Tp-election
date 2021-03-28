@@ -2,7 +2,7 @@
 
 <div class="card text-center mb-4 mt-4" *ngFor="let partie of parties">
     <div class="card-header">
-        <span class="badge badge-warning">Winner</span>
+        <span class="badge badge-warning" *ngIf="partie.win == true">Winner</span>
         {{partie.votes.length}}
     </div>
     <div class="card-body">
@@ -10,6 +10,6 @@
         <p class="card-text">{{partie.description}}</p>
     </div>
     <div class="card-footer text-muted">
-        date creation     
+        dateCreation
     </div>
 </div>
