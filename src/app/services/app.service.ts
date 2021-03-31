@@ -6,7 +6,9 @@ import { Partie } from '../models/Partie';
   providedIn: 'root'
 })
 export class AppService {
+
   public parties:Array<Partie>;
+
   constructor() { 
     this.parties=new Array<Partie>();
   }
@@ -40,6 +42,10 @@ export class AppService {
     for(let partie of this.parties){
       partie.win = false;
     }
+  }
+
+  public getWinner():string{
+    return "";
   }
 
   // Citoyen

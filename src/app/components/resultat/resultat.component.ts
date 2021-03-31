@@ -29,7 +29,6 @@ export class ResultatComponent implements OnInit {
     let flag:boolean;
     
     max = this.parties[0].votes.length;
-    index = 0;
     flag = false;
 
     for (let partie of this.parties) {
@@ -43,7 +42,7 @@ export class ResultatComponent implements OnInit {
         index = i;
       }
     }
-
+    
     this.service.resetWin();
 
     if(flag == true)
